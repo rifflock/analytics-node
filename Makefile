@@ -1,30 +1,12 @@
-# Binaries.
-browserify = ./node_modules/.bin/browserify
-mocha = ./node_modules/.bin/mocha
-nsp = ./node_modules/.bin/nsp
 
-# Build the browserify bundle.
-analytics-node.js: node_modules lib/index.js
-	@$(browserify) lib/index.js \
-		--standalone Analytics \
-		--outfile analytics-node.js
-
-# Install the node module dependencies.
 node_modules: package.json
-	@npm install
-	@touch package.json
+	npm install
+	touch $@
 
-# Run the tests.
 test: node_modules
-	@$(mocha) \
-		--reporter spec \
-		--bail
+	./node_modules/.bin/ava
 
-clean:
-	@rm analytics-node.js
+lint: node_modules
+	./node_modules/.bin/standard
 
-nsp:
-	@$(nsp) check
-
-# Phonies.
-.PHONY: test
+.PHONY: test lint
