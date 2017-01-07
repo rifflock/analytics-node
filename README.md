@@ -15,4 +15,6 @@ $ npm install --save analytics-node
 
 Documentation is available at [https://segment.com/libraries/node](https://segment.com/libraries/node).
 
-## License (MIT)
+## License
+
+MIT
