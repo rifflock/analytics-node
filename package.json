@@ -17,10 +17,9 @@
   "dependencies": {
     "commander": "^2.9.0",
     "crypto-token": "^1.0.1",
-    "debug": "^2.2.0",
-    "join-component": "~1.0.0",
-    "lodash": "~2.4.1",
-    "superagent": "^1.4.0"
+    "debug": "^2.6.0",
+    "lodash": "^2.4.2",
+    "superagent": "^1.8.5"
   },
   "devDependencies": {
     "ava": "^0.17.0",
